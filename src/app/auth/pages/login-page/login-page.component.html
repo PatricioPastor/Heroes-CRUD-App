@@ -2,14 +2,25 @@
   <span class="text-lg text-center mb-4">Login</span>
   <mat-form-field color="accent">
     <mat-label>User</mat-label>
-    <input type="text" matInput placeholder="Ingrese su Usuario">
+    <input
+     #emailInput
+     type="text"
+     matInput
+     placeholder="Ingrese su Usuario">
 
   </mat-form-field>
   <mat-form-field color="accent">
     <mat-label>Password</mat-label>
-    <input type="password"  matInput placeholder="Ingrese su Usuario">
+    <input type="password"
+     matInput
+     #passwordInput
+     placeholder="Ingrese su Usuario">
   </mat-form-field>
-  <button mat-button mat-flat-button color="accent">Login</button>
+  <button
+  (click)="onLogin(emailInput.value, passwordInput.value)"
+  mat-button
+  mat-flat-button
+  color="accent">Login</button>
 
 </div>
 <a routerLink="../new-account">Create account?</a>
